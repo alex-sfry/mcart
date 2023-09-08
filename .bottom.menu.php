@@ -1,16 +1,15 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <?
 $aMenuLinks = Array(
 	Array(
 		"Контакты", 
-		"contacts/", 
+		SITE_DIR."aboutus/contacts/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Авторизация", 
-		"login/", 
+		SITE_DIR."login/", 
 		Array(), 
 		Array(), 
 		"" 

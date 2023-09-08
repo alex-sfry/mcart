@@ -1,2 +1,5 @@
-bitrix/
+!bitrix/
+bitrix/*
 upload/
+
+!local/templates/home/components/bitrix/
