@@ -146,3 +146,14 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/main.js");
             </div>
         </div>
     </div>
+
+    <?$APPLICATION->IncludeComponent(
+	"bitrix:main.include",
+	"",
+	Array(
+		"AREA_FILE_RECURSIVE" => "Y",
+		"AREA_FILE_SHOW" => "page",
+		"AREA_FILE_SUFFIX" => "nav",
+		"EDIT_TEMPLATE" => ""
+	)
+);?>
