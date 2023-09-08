@@ -5,14 +5,4 @@ $MESS['FOOTER_ABOUT_TEXT'] = 'Lorem ipsum dolor sit amet, consectetur adipisicin
 $MESS['FOOTER_FOLLOW_US'] = 'Свяжитесь с нами';
 $MESS['FOOTER_COPYRIGHT1'] = '';
 $MESS['FOOTER_COPYRIGHT2'] = 'Все права защищены | Этот шаблон сделан Colorlib';
-
-
-
-
-$MESS['FOOTER_MENU_ITEM_1'] = 'Контакты';
-$MESS['FOOTER_MENU_ITEM_2'] = 'Авторизация';
-$MESS['FOOTER_MENU_ITEM_1'] = 'Контакты';
-$MESS['FOOTER_MENU_ITEM_2'] = 'Авторизация';
-$MESS['FOOTER_MENU_ITEM_1'] = 'Контакты';
-$MESS['FOOTER_MENU_ITEM_2'] = 'Авторизация';
 ?>

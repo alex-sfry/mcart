@@ -137,7 +137,7 @@ $APPLICATION->IncludeComponent(
         <div class="row mb-5">
             <div class="col-12">
                 <div class="site-section-title">
-                    <h2>New Properties for You</h2>
+                    <h2><?= GetMessage('PROPERTIES') ?></h2>
                 </div>
             </div>
         </div>
@@ -156,7 +156,11 @@ $APPLICATION->IncludeComponent(
                         0 => "NAME",
                         1 => "PREVIEW_TEXT",
                         2 => "PREVIEW_PICTURE",
-                        3 => "",
+                        3 => "PROPERTY_AREA",
+                        4 => "PROPERTY_FLOORS_QTY",
+                        5 => "PROPERTY_WC_QTY",
+                        6 => "PROPERTY_HAS_GARAGE",
+                        7 => "PROPERTY_PRICE",
                     ),
                     "SORT_BY1" => "ACTIVE_FROM",
                     "SORT_ORDER1" => "DESC",
@@ -182,7 +186,7 @@ $APPLICATION->IncludeComponent(
             <div class="col-md-7 text-center mb-5">
                 
                 <div class="site-section-title">
-                    <h2>Our Services</h2>
+                    <h2><?= GetMessage('SERVICES') ?></h2>
                 </div>
             </div>
         </div>
@@ -201,7 +205,8 @@ $APPLICATION->IncludeComponent(
                         0 => "NAME",
                         1 => "PREVIEW_TEXT",
                         2 => "DETAIL_TEXT",
-
+                        3 => "PROPERTY_ICON",
+                        4 => "PROPERTY_EXT_URL",
                     ),
                     "IBLOCKS" => array(
                         0 => "4",
@@ -226,7 +231,7 @@ $APPLICATION->IncludeComponent(
         <div class="row justify-content-center mb-5">
             <div class="col-md-7 text-center">
                 <div class="site-section-title">
-                    <h2>Our Blog</h2>
+                    <h2><?= GetMessage('BLOG') ?></h2>
                 </div>
             </div>
         </div>
@@ -247,6 +252,7 @@ $APPLICATION->IncludeComponent(
                         3 => "DATE_CREATE",
                         4 => "",
                     ),
+                    
                     "IBLOCKS" => array(
                         0 => "2",
                     ),
