@@ -484,7 +484,7 @@ a:hover {
 }
 
 .site-navbar .site-navigation .site-menu>li:last-child>a {
-    padding-right: 0;
+    padding-right: 20px;
 }
 
 .site-navbar .site-navigation .site-menu .has-children {

@@ -5,7 +5,6 @@ use Bitrix\Main\Page\Asset; ?>
 <? IncludeTemplateLangFile(__FILE__); ?>
 
 <?
-
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/fonts/icomoon/style.css");
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/bootstrap.min.css");
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/magnific-popup.css");
@@ -66,35 +65,26 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/main.js");
                 <div class="row align-items-center">
                     <div class="col-6 col-md-6">
                         <p class="mb-0">
-                            <a href="#" class="mr-3">
-                                <span class="text-black fl-bigmug-line-phone351"></span>
-                                <span class="d-none d-md-inline-block ml-2">
-                                    <? $APPLICATION->IncludeComponent(
-                                        "bitrix:main.include",
-                                        "",
-                                        array(
-                                            "AREA_FILE_SHOW" => "file",
-                                            "AREA_FILE_SUFFIX" => "inc",
-                                            "EDIT_TEMPLATE" => "",
-                                            "PATH" => "/include/phone.php"
-                                        )
-                                    ); ?>
-                                </span>
-                            </a>
-                            <a href="#"><span class="text-black fl-bigmug-line-email64"></span>
-                                <span class="d-none d-md-inline-block ml-2">
-                                    <? $APPLICATION->IncludeComponent(
-                                        "bitrix:main.include",
-                                        "",
-                                        array(
-                                            "AREA_FILE_SHOW" => "file",
-                                            "AREA_FILE_SUFFIX" => "inc",
-                                            "EDIT_TEMPLATE" => "",
-                                            "PATH" => "/include/email.php"
-                                        )
-                                    ); ?>
-                                </span>
-                            </a>
+                            <? $APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "AREA_FILE_SUFFIX" => "inc",
+                                    "EDIT_TEMPLATE" => "",
+                                    "PATH" => "/include/phone.php"
+                                )
+                            ); ?>
+                            <? $APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "AREA_FILE_SUFFIX" => "inc",
+                                    "EDIT_TEMPLATE" => "",
+                                    "PATH" => "/include/email.php"
+                                )
+                            ); ?>
                         </p>
                     </div>
                     <div class="col-6 col-md-6 text-right">
@@ -116,7 +106,7 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/main.js");
         <div class="site-navbar">
             <div class="container py-1">
                 <div class="row align-items-center">
-                    <div class="col-8 col-md-8 col-lg-4">
+                    <div class="col-8 col-md-8 col-lg-2">
                         <h1 class="">
                             <? $APPLICATION->IncludeComponent(
                                 "bitrix:main.include",
@@ -130,59 +120,28 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/main.js");
                             ); ?>
                         </h1>
                     </div>
-                    <div class="col-4 col-md-4 col-lg-8">
+                    <div class="col-4 col-md-4 col-lg-10">
 
-                        <?$APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"horizontal_multilevel", 
-	array(
-		"ALLOW_MULTI_SELECT" => "N",
-		"CHILD_MENU_TYPE" => "left",
-		"COMPONENT_TEMPLATE" => "horizontal_multilevel",
-		"DELAY" => "N",
-		"MAX_LEVEL" => "3",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_TYPE" => "N",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"ROOT_MENU_TYPE" => "top",
-		"USE_EXT" => "N"
-	),
-	false
-);?>
-                        <nav class="site-navigation text-right text-md-right">
-
-                            <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-
-                            <ul class="site-menu js-clone-nav d-none d-lg-block">
-                                <li class="active">
-                                    <a href="index.html"><?= GetMessage('MENU_ITEM_1') ?></a>
-                                </li>
-                                <li class="has-children">
-                                    <a href="properties.html">Properties</a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">Buy</a></li>
-                                        <li><a href="#">Rent</a></li>
-                                        <li><a href="#">Lease</a></li>
-                                        <li class="has-children">
-                                            <a href="#">Menu</a>
-                                            <ul class="dropdown">
-                                                <li><a href="#">Menu One</a></li>
-                                                <li><a href="#">Menu Two</a></li>
-                                                <li><a href="#">Menu Three</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </nav>
+                        <? $APPLICATION->IncludeComponent(
+                            "bitrix:menu",
+                            "top_multilevel",
+                            array(
+                                "ALLOW_MULTI_SELECT" => "N",
+                                "CHILD_MENU_TYPE" => "left",
+                                "COMPONENT_TEMPLATE" => "top_multilevel",
+                                "DELAY" => "N",
+                                "MAX_LEVEL" => "3",
+                                "MENU_CACHE_GET_VARS" => array(),
+                                "MENU_CACHE_TIME" => "3600",
+                                "MENU_CACHE_TYPE" => "N",
+                                "MENU_CACHE_USE_GROUPS" => "Y",
+                                "ROOT_MENU_TYPE" => "top",
+                                "USE_EXT" => "N"
+                            ),
+                            false
+                        ); ?>
+                
                     </div>
-
-
                 </div>
             </div>
         </div>
