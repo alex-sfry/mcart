@@ -58,7 +58,7 @@ $APPLICATION->SetTitle("Мои объявления");
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
 		"STRICT_SECTION_CHECK" => "Y",
 		"SET_TITLE" => "Y",
-		"ADD_SECTIONS_CHAIN" => "Y",
+		"ADD_SECTIONS_CHAIN" => "N",
 		"ADD_ELEMENT_CHAIN" => "N",
 		"SET_LAST_MODIFIED" => "Y",
 		"PAGER_BASE_LINK_ENABLE" => "Y",
@@ -67,7 +67,7 @@ $APPLICATION->SetTitle("Мои объявления");
 		"MESSAGE_404" => "",
 		"PAGER_BASE_LINK" => "",
 		"PAGER_PARAMS_NAME" => "arrPager",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"USE_PERMISSIONS" => "Y",
 		"GROUP_PERMISSIONS" => array(
 			0 => "1",
@@ -125,8 +125,8 @@ $APPLICATION->SetTitle("Мои объявления");
 		"SHARE_HIDE" => "Y",
 		"SHARE_TEMPLATE" => "",
 		"SHARE_HANDLERS" => array(
-			0 => "delicious",
-			1 => "lj",
+			0 => "lj",
+			1 => "delicious",
 			2 => "twitter",
 		),
 		"SHARE_SHORTEN_URL_LOGIN" => "",

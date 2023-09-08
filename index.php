@@ -193,34 +193,35 @@ $APPLICATION->IncludeComponent(
 
         <div class="row">
             <? $APPLICATION->IncludeComponent(
-                "bitrix:news.line", 
-                "services", 
-                array(
-                    "ACTIVE_DATE_FORMAT" => "d.m.Y",
-                    "CACHE_GROUPS" => "Y",
-                    "CACHE_TIME" => "300",
-                    "CACHE_TYPE" => "A",
-                    "DETAIL_URL" => "",
-                    "FIELD_CODE" => array(
-                        0 => "NAME",
-                        1 => "PREVIEW_TEXT",
-                        2 => "DETAIL_TEXT",
-                        3 => "PROPERTY_ICON",
-                        4 => "PROPERTY_EXT_URL",
-                    ),
-                    "IBLOCKS" => array(
-                        0 => "4",
-                    ),
-                    "IBLOCK_TYPE" => "services",
-                    "NEWS_COUNT" => "6",
-                    "SORT_BY1" => "ACTIVE_FROM",
-                    "SORT_BY2" => "SORT",
-                    "SORT_ORDER1" => "DESC",
-                    "SORT_ORDER2" => "ASC",
-                    "COMPONENT_TEMPLATE" => "services"
-                ),
-                false
-            ); ?>
+	"bitrix:news.line", 
+	"services", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "31536000",
+		"CACHE_TYPE" => "A",
+		"DETAIL_URL" => "",
+		"FIELD_CODE" => array(
+			0 => "NAME",
+			1 => "PREVIEW_TEXT",
+			2 => "DETAIL_TEXT",
+			3 => "PROPERTY_ICON",
+			4 => "PROPERTY_EXT_URL",
+			5 => "",
+		),
+		"IBLOCKS" => array(
+			0 => "4",
+		),
+		"IBLOCK_TYPE" => "services",
+		"NEWS_COUNT" => "6",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"COMPONENT_TEMPLATE" => "services"
+	),
+	false
+); ?>
             
         </div>
     </div>
@@ -237,35 +238,34 @@ $APPLICATION->IncludeComponent(
         </div>
         <div class="row">
             <? $APPLICATION->IncludeComponent(
-                "bitrix:news.line",
-                "news_line",
-                array(
-                    "ACTIVE_DATE_FORMAT" => "d.m.Y",
-                    "CACHE_GROUPS" => "Y",
-                    "CACHE_TIME" => "300",
-                    "CACHE_TYPE" => "A",
-                    "DETAIL_URL" => "",
-                    "FIELD_CODE" => array(
-                        0 => "NAME",
-                        1 => "PREVIEW_TEXT",
-                        2 => "PREVIEW_PICTURE",
-                        3 => "DATE_CREATE",
-                        4 => "",
-                    ),
-                    
-                    "IBLOCKS" => array(
-                        0 => "2",
-                    ),
-                    "IBLOCK_TYPE" => "news",
-                    "NEWS_COUNT" => "3",
-                    "SORT_BY1" => "ACTIVE_FROM",
-                    "SORT_BY2" => "SORT",
-                    "SORT_ORDER1" => "DESC",
-                    "SORT_ORDER2" => "ASC",
-                    "COMPONENT_TEMPLATE" => "news_line"
-                ),
-                false
-            ); ?>
+	"bitrix:news.line", 
+	"news_line", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "31536000",
+		"CACHE_TYPE" => "A",
+		"DETAIL_URL" => "",
+		"FIELD_CODE" => array(
+			0 => "NAME",
+			1 => "PREVIEW_TEXT",
+			2 => "PREVIEW_PICTURE",
+			3 => "DATE_CREATE",
+			4 => "",
+		),
+		"IBLOCKS" => array(
+			0 => "2",
+		),
+		"IBLOCK_TYPE" => "news",
+		"NEWS_COUNT" => "3",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"COMPONENT_TEMPLATE" => "news_line"
+	),
+	false
+); ?>
         </div>
     </div>
 </div>

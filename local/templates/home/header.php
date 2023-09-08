@@ -147,13 +147,18 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/main.js");
         </div>
     </div>
 
-    <?$APPLICATION->IncludeComponent(
+    <?
+    $page = $APPLICATION->GetCurPage();  // get current url
+
+    // show on every page except for homepage
+    $page != '/' &&                     
+    $APPLICATION->IncludeComponent(
 	"bitrix:main.include",
 	"",
 	Array(
-		"AREA_FILE_RECURSIVE" => "Y",
-		"AREA_FILE_SHOW" => "page",
+		"AREA_FILE_SHOW" => "file",
 		"AREA_FILE_SUFFIX" => "nav",
-		"EDIT_TEMPLATE" => ""
+		"EDIT_TEMPLATE" => "",
+        "PATH" => "/include/header_nav.php"
 	)
 );?>
