@@ -1410,7 +1410,9 @@ a:hover {
     color: #000;
 }
 
-.site-pagination a {
+.site-pagination a,
+.site-pagination span
+ {
     display: inline-block;
     width: 50px;
     border-radius: 50%;
@@ -1421,19 +1423,23 @@ a:hover {
     border: 1px solid #e6e6e6;
 }
 
-.site-pagination a:hover {
+.site-pagination a:hover,
+.site-pagination span:hover {
     -webkit-box-shadow: 0 4px 10px -1px rgba(0, 0, 0, 0.05);
     box-shadow: 0 4px 10px -1px rgba(0, 0, 0, 0.05);
     border: 1px solid #cccccc;
+    
 }
 
-.site-pagination a.active {
+.site-pagination a.active,
+.site-pagination span.active {
     border: 1px solid transparent;
     background: #f89d13;
     color: #fff;
 }
 
-.site-pagination a.active:hover {
+.site-pagination a.active:hover,
+.site-pagination span.active:hover {
     border: 1px solid transparent;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -1441,7 +1447,7 @@ a:hover {
 
 .site-pagination span {
     display: inline-block;
-    width: 20px;
+    width: 50px;
 }
 
 .unit-8 .accordion-item .heading {
