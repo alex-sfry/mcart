@@ -3,21 +3,23 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Вакансии");
 ?>
 
+<?=$USER->GetID()?>
+
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
-	".default", 
+	"mcart", 
 	array(
 		"DISPLAY_DATE" => "Y",
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"SEF_MODE" => "Y",
 		"AJAX_MODE" => "N",
-		"IBLOCK_TYPE" => "vacancies",
-		"IBLOCK_ID" => "3",
+		"IBLOCK_TYPE" => "news",
+		"IBLOCK_ID" => "5",
 		"NEWS_COUNT" => "10",
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",
-		"USE_RATING" => "N",
+		"USE_RATING" => "Y",
 		"USE_CATEGORIES" => "N",
 		"USE_REVIEW" => "N",
 		"USE_FILTER" => "N",
@@ -33,8 +35,9 @@ $APPLICATION->SetTitle("Вакансии");
 			1 => "",
 		),
 		"LIST_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "DISLIKE",
+			1 => "LIKE",
+			2 => "",
 		),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "Y",
 		"DISPLAY_NAME" => "Y",
@@ -58,7 +61,7 @@ $APPLICATION->SetTitle("Вакансии");
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
 		"STRICT_SECTION_CHECK" => "Y",
 		"SET_TITLE" => "Y",
-		"ADD_SECTIONS_CHAIN" => "Y",
+		"ADD_SECTIONS_CHAIN" => "N",
 		"ADD_ELEMENT_CHAIN" => "N",
 		"SET_LAST_MODIFIED" => "Y",
 		"PAGER_BASE_LINK_ENABLE" => "Y",
@@ -67,7 +70,7 @@ $APPLICATION->SetTitle("Вакансии");
 		"MESSAGE_404" => "",
 		"PAGER_BASE_LINK" => "",
 		"PAGER_PARAMS_NAME" => "arrPager",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"USE_PERMISSIONS" => "Y",
 		"GROUP_PERMISSIONS" => array(
 			0 => "2",
@@ -124,13 +127,13 @@ $APPLICATION->SetTitle("Вакансии");
 		"SHARE_HIDE" => "Y",
 		"SHARE_TEMPLATE" => "",
 		"SHARE_HANDLERS" => array(
-			0 => "delicious",
-			1 => "lj",
+			0 => "lj",
+			1 => "delicious",
 			2 => "twitter",
 		),
 		"SHARE_SHORTEN_URL_LOGIN" => "",
 		"SHARE_SHORTEN_URL_KEY" => "",
-		"COMPONENT_TEMPLATE" => ".default",
+		"COMPONENT_TEMPLATE" => "mcart",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"DISPLAY_AS_RATING" => "rating",
 		"FILE_404" => "",
