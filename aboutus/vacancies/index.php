@@ -15,7 +15,7 @@ $APPLICATION->SetTitle("Вакансии");
 		"SEF_MODE" => "Y",
 		"AJAX_MODE" => "N",
 		"IBLOCK_TYPE" => "news",
-		"IBLOCK_ID" => "5",
+		"IBLOCK_ID" => "3",
 		"NEWS_COUNT" => "10",
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",
