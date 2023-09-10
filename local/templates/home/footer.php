@@ -88,6 +88,11 @@
                     false
                 ); ?>
 
+                <?
+                if (substr($APPLICATION->GetCurPage(),-1) != '/') {
+                    $APPLICATION->AddChainItem($APPLICATION->GetTitle());
+                }
+                ?>
             </div>
         </div>
     </div>

@@ -153,12 +153,14 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/main.js");
     // show on every page except for homepage
     $page != '/' &&                     
     $APPLICATION->IncludeComponent(
-	"bitrix:main.include",
-	"",
-	Array(
-		"AREA_FILE_SHOW" => "file",
-		"AREA_FILE_SUFFIX" => "nav",
-		"EDIT_TEMPLATE" => "",
-        "PATH" => "/include/header_nav.php"
-	)
-);?>
+        "bitrix:main.include",
+        "",
+        Array(
+            "AREA_FILE_SHOW" => "file",
+            "AREA_FILE_SUFFIX" => "nav",
+            "EDIT_TEMPLATE" => "",
+            "PATH" => "/include/header_nav.php"
+        )
+    );
+    
+?>

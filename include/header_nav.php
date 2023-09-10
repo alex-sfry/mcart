@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-10">
-                <h1 class="mb-2"><?= GetMessage('ABOUT_US_HEADING')?></h1>
+                <h1 class="mb-2"><? $APPLICATION->ShowTitle() ?></h1>
                 <!-- <div><a href="index.html">Home</a> <span class="mx-2 text-white">&bullet;</span> <strong class="text-white">About</strong></div> -->
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:breadcrumb",
