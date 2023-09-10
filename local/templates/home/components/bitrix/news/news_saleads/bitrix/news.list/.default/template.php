@@ -14,7 +14,6 @@ $this->setFrameMode(true);
 ?>
 
 <? $page = $APPLICATION->GetCurPage(); ?>
-<? $user_id = $GLOBALS['USER']->GetID(); // get user id ?>
 
 <div class="pt-5">
     <div class="container">
@@ -124,13 +123,6 @@ $this->setFrameMode(true);
 
             <div class="row mb-5">
                 <? foreach ($arResult["ITEMS"] as $arItem) : ?>
-
-                    <? 
-                    if ($page == '/selleraccount/myads/') {
-                        if ($arItem['CREATED_BY'] != $user_id) continue; //skip item if it was not created by current user
-                    }
-                    ?>
-
                     <?
                     $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
                     $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));

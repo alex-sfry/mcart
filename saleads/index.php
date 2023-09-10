@@ -51,7 +51,7 @@ $APPLICATION->SetTitle("Объявления");
 		"META_KEYWORDS" => "-",
 		"META_DESCRIPTION" => "-",
 		"BROWSER_TITLE" => "-",
-		"DETAIL_SET_CANONICAL_URL" => "Y",
+		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_FIELD_CODE" => array(
 			0 => "NAME",
@@ -94,7 +94,7 @@ $APPLICATION->SetTitle("Объявления");
 		),
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "31536000",
-		"CACHE_FILTER" => "N",
+		"CACHE_FILTER" => "Y",
 		"CACHE_GROUPS" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",

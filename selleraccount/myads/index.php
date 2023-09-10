@@ -4,6 +4,10 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Мои объявления");
 ?>
 
+<?
+$GLOBALS['arrFilter'] = ['CREATED_BY' => $GLOBALS['USER']->GetID()];
+?>
+
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"news_saleads", 
@@ -19,9 +23,9 @@ $APPLICATION->SetTitle("Мои объявления");
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",
 		"USE_RATING" => "N",
-		"USE_CATEGORIES" => "Y",
-		"USE_REVIEW" => "Y",
-		"USE_FILTER" => "N",
+		"USE_CATEGORIES" => "N",
+		"USE_REVIEW" => "N",
+		"USE_FILTER" => "Y",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "SORT",
@@ -30,12 +34,22 @@ $APPLICATION->SetTitle("Мои объявления");
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"LIST_FIELD_CODE" => array(
-			0 => "CREATED_BY",
-			1 => "",
+			0 => "NAME",
+			1 => "PREVIEW_TEXT",
+			2 => "PREVIEW_PICTURE",
+			3 => "DETAIL_TEXT",
+			4 => "DETAIL_PICTURE",
+			5 => "CREATED_BY",
+			6 => "",
 		),
 		"LIST_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "EXT_REFERENCE",
+			1 => "AREA",
+			2 => "FLOORS_QTY",
+			3 => "WC_QTY",
+			4 => "HAS_GARAGE",
+			5 => "PRICE",
+			6 => "",
 		),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "Y",
 		"DISPLAY_NAME" => "Y",
@@ -45,12 +59,19 @@ $APPLICATION->SetTitle("Мои объявления");
 		"DETAIL_SET_CANONICAL_URL" => "Y",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_FIELD_CODE" => array(
-			0 => "",
+			0 => "TIMESTAMP_X",
 			1 => "",
 		),
 		"DETAIL_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "EXT_REFERENCE",
+			1 => "AREA",
+			2 => "FLOORS_QTY",
+			3 => "WC_QTY",
+			4 => "HAS_GARAGE",
+			5 => "PRICE",
+			6 => "IMAGE_GALLERY",
+			7 => "MORE_INFO",
+			8 => "",
 		),
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "N",
@@ -73,8 +94,8 @@ $APPLICATION->SetTitle("Мои объявления");
 		"GROUP_PERMISSIONS" => array(
 			0 => "1",
 		),
-		"CACHE_TYPE" => "N",
-		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "31536000",
 		"CACHE_FILTER" => "Y",
 		"CACHE_GROUPS" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
@@ -85,7 +106,7 @@ $APPLICATION->SetTitle("Мои объявления");
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
 		"PAGER_SHOW_ALL" => "N",
-		"FILTER_NAME" => "",
+		"FILTER_NAME" => "arrFilter",
 		"FILTER_FIELD_CODE" => array(
 			0 => "",
 			1 => "",
@@ -106,8 +127,7 @@ $APPLICATION->SetTitle("Мои объявления");
 			4 => "4",
 			5 => "",
 		),
-		"CATEGORY_IBLOCK" => array(
-		),
+		"CATEGORY_IBLOCK" => "",
 		"CATEGORY_CODE" => "CATEGORY",
 		"CATEGORY_ITEMS_COUNT" => "5",
 		"MESSAGES_PER_PAGE" => "10",
