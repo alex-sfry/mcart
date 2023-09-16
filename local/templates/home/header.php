@@ -88,6 +88,7 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/main.js");
                         </p>
                     </div>
                     <div class="col-6 col-md-6 text-right">
+                    <a href="/login/" class="mx-5">Авторизация</a>
                         <? $APPLICATION->IncludeComponent(
                             "bitrix:main.include",
                             "",
