@@ -27,7 +27,7 @@ if (!$arResult['STAR_AGENTS']) {
         <div class="row mb-5">
             <div class="col-12">
                 <div class="site-section-title">
-                    <h2>Агенты по Недвижимости</h2>
+                    <h2><?= GetMessage('AGENTS_HEADING') ?></h2>
                 </div>
             </div>
         </div>
@@ -44,15 +44,15 @@ if (!$arResult['STAR_AGENTS']) {
                 <div class="agent__card_item">
                     <div class="agent__card_info">
                         <div class="card__info_item">
-                            <div class="position">Электронная почта: </div>
+                            <div class="position"><?= GetMessage('AGENTS_EMAIL') ?></div>
                             <div class="name"><?= $item['UF_EMAIL'] ?></div>
                         </div>
                         <div class="card__info_item">
-                            <div class="position">Телефон: </div>
+                            <div class="position"><?= GetMessage('AGENTS_PHONE') ?></div>
                             <div class="name"><?= $item['UF_PHONE'] ?></div>
                         </div>
                         <div class="card__info_item">
-                            <div class="position">Вид деятельности:</div>
+                            <div class="position"><?= GetMessage('AGENTS_TYPE') ?></div>
                             <div class="name"><?= $item['UF_TYPE_VALUE'] ?></div>
                         </div>
                     </div>
