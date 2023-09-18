@@ -1450,6 +1450,14 @@ a:hover {
     width: 50px;
 }
 
+.site-pagination li {
+    list-style: none;
+}
+
+.page-nav {
+    gap: 4px;
+}
+
 .unit-8 .accordion-item .heading {
     font-size: 1.2rem;
     font-weight: 400;
