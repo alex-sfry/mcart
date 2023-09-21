@@ -10,6 +10,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
  * @global CUser $USER
  */
 ?>
+
 <div class="mfeedback">
     <? if (!empty($arResult["ERROR_MESSAGE"])) {
         foreach ($arResult["ERROR_MESSAGE"] as $v)
@@ -17,8 +18,8 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
     }
     if ($arResult["OK_MESSAGE"] <> '') {
     ?><div class="mf-ok-text"><?= $arResult["OK_MESSAGE"] ?></div><?
-                                                            }
-                                                                ?>
+                                                                }
+                                                                    ?>
 
     <div class="site-section">
         <div class="container">
@@ -32,7 +33,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
                                 <label class="font-weight-bold" for="fullname">
                                     <?= GetMessage("MFT_NAME") ?><? if (empty($arParams["REQUIRED_FIELDS"]) || in_array("NAME", $arParams["REQUIRED_FIELDS"])) : ?><? endif ?>
                                 </label>
-                                <input type="text" id="fullname" class="form-control" placeholder="<?= GetMessage("MFT_NAME") ?>" name="user_name" value="">
+                                <input type="text" id="fullname" class="form-control" placeholder="<?= GetMessage("MFT_NAME") ?>" name="user_name" value="<?= $arResult["AUTHOR_NAME"] ?>">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -40,7 +41,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
                                 <label class="font-weight-bold" for="email">
                                     <?= GetMessage("MFT_EMAIL") ?><? if (empty($arParams["REQUIRED_FIELDS"]) || in_array("EMAIL", $arParams["REQUIRED_FIELDS"])) : ?><? endif ?>
                                 </label>
-                                <input type="email" id="email" class="form-control" placeholder="<?= GetMessage("MFT_EMAIL") ?>" name="user_email" value="">
+                                <input type="email" id="email" class="form-control" placeholder="<?= GetMessage("MFT_EMAIL") ?>" name="user_email" value="<?= $arResult["AUTHOR_EMAIL"] ?>">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -51,9 +52,11 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
                                 <textarea name="MESSAGE" id="message" cols="30" rows="5" class="form-control" placeholder="<?= GetMessage("MFT_MESSAGE") ?>"></textarea>
                             </div>
                         </div>
+
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <input type="submit" value="<?= GetMessage("MFT_SUBMIT") ?>" class="btn btn-primary  py-2 px-4 rounded-0">
+                                <input type="hidden" name="PARAMS_HASH" value="<?=$arResult["PARAMS_HASH"]?>">
+                                <input type="submit" name="submit" value="<?= GetMessage("MFT_SUBMIT") ?>" class="btn btn-primary py-2 px-4 rounded-0">
                             </div>
                         </div>
                     </form>
@@ -76,3 +79,4 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
             </div>
         </div>
     </div>
+</div>
