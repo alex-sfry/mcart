@@ -16,9 +16,10 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 
-if (!$arResult['STAR_AGENTS']) {
-    $star_agents = [];
-} else $star_agents = $arResult['STAR_AGENTS'];
+
+// if (!$arResult['STAR_AGENTS']) {
+//     $star_agents = [];
+// } else $star_agents = $arResult['STAR_AGENTS'];
 
 ?>
 
@@ -34,9 +35,14 @@ if (!$arResult['STAR_AGENTS']) {
         <div class="mb-5">
 
             <? foreach($arResult['AGENTS']['ITEMS'] as $item): ?>
+
+                <? 
+                    $photo_url =  $item['UF_PHOTO_VALUE'] ? $item['UF_PHOTO_VALUE'] : $templateFolder . '/images/no-avatar.png' 
+                ?>
+
             <div class="agent__card">
                 <div class="small-info">
-                    <div class="avatar" style="background-image: url(<?= $item['UF_PHOTO_VALUE'] ?>);"></div>
+                    <div class="avatar" style="background-image: url(<?= $photo_url ?>);"></div>
                     <div class="info">
                         <div class="name"><?= $item['UF_NAME'] ?></div>
                     </div>
@@ -57,7 +63,7 @@ if (!$arResult['STAR_AGENTS']) {
                         </div>
                     </div>
                 </div>
-                <a class="star<? if (in_array($item['ID'], $star_agents)) echo ' active' ?>" data-id="<?=  $item['ID'] ?>">
+                <a class="star<? if (in_array($item['ID'], $arResult['STAR_AGENTS'])) echo ' active' ?>" data-id="<?=  $item['ID'] ?>">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 4L14.472 9.26604L20 10.1157L16 14.2124L16.944 20L12 17.266L7.056 20L8 14.2124L4 10.1157L9.528 9.26604L12 4Z" stroke="#95929A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>

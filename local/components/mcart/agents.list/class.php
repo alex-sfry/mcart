@@ -96,9 +96,6 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
             );
         }
 
-        // echo '<pre>';
-        // var_dump($arParams);
-        // echo '<pre>';
 
         if (!$arParams['CACHE_TIME']) $arParams['CACHE_TIME'] = "3600";
         if (!$arParams['NEWS_COUNT']) $arParams['NEWS_COUNT'] = "3";
@@ -125,7 +122,7 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
     final public function executeComponent(): void
     {   
         if (empty($this->arParams["HLBLOCK_TNAME"])) {
-            new Error(Loc::getMessage('MCART_AGENTS_LIST_NOT_HLBLOCK_TNAME', ['#MODULE#' => 'highloadblock']), 404);
+            new Error(Loc::getMessage('MCART_AGENTS_LIST_NOT_HLBLOCK_TNAME'), 404);
 
             /**
              * Если параметр Название таблицы (TABLE_NAME) Highload-блока не задан,
@@ -177,8 +174,11 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
          * Это можно зделать с помощью CUserOptions::GetOption
          */ 
 
-
         $this->arResult['STAR_AGENTS'] = CUserOptions::GetOption('mcart_agent', 'options_agents_star');
+
+        if (!$this->arResult['STAR_AGENTS']) $this->arResult['STAR_AGENTS'] = [];
+
+
         /*
          * Данного метода нет в документации, код метода и его параметры можно найти в ядре (/bitrix/modules/main/) или в гугле
          * $category - это категория настройки, можете придумать любую, например mcart_agent
@@ -263,14 +263,15 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
         if ($fieldID) {
 
             $enum = new \CUserFieldEnum();
-            $list = $enum->GetList(array(), array($fieldID));
+            $list = $enum->GetList(array(), array('USER_FIELD_ID' => $fieldID));
 
-            $result = $list->arResult ;
-           
+            $result = $list->arResult;
+
             /*
              *  Получить список свойств для $fieldID используя класс CUserFieldEnum
              */
         }
+
         return $result;
     }
 
@@ -294,6 +295,7 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
             ->initFromUri();
 
         $rsAgents = $entity::GetList([
+            'select' => ['*'],
             'filter'  => ["=UF_ACTIVITY" => '1'],
             'count_total' => true,
             'offset' => $nav->getOffset(),
@@ -315,10 +317,13 @@ class AgentsList extends CBitrixComponent implements Controllerable, Errorable
                 }
             }
 
-            $photo = \CFile::GetPath((INT)$arAgent["UF_PHOTO"]);
-            $arAgent['UF_PHOTO_VALUE'] = $photo;
+            if ($arAgent['UF_PHOTO'] != '0') {              
+                $photo = \CFile::GetPath((INT)$arAgent["UF_PHOTO"]);
+                $arAgent['UF_PHOTO_VALUE'] = $photo;
+            } else $arAgent['UF_PHOTO_VALUE'] = null;
 
             $arAgents['ITEMS'][$arAgent['ID']] = $arAgent;
+            
 
             /**
              * Обработает полученный массив
