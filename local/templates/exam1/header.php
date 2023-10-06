@@ -52,7 +52,7 @@ Asset::getInstance()->addString("<link rel='shortcut icon' href='" . SITE_TEMPLA
                     </form>
 
                     <?
-                     $APPLICATION->IncludeComponent(
+                    $APPLICATION->IncludeComponent(
                         "bitrix:system.auth.form",
                         "demo",
                         array(
@@ -61,7 +61,7 @@ Asset::getInstance()->addString("<link rel='shortcut icon' href='" . SITE_TEMPLA
                             "REGISTER_URL" => "/s2/login/?register=yes",
                             "SHOW_ERRORS" => "N"
                         )
-                    ); 
+                    );
                     ?>
 
                 </div>
@@ -69,39 +69,54 @@ Asset::getInstance()->addString("<link rel='shortcut icon' href='" . SITE_TEMPLA
         </header>
         <!-- /header -->
         <!-- nav -->
-                <? $APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"top_menu_exam1", 
-	array(
-		"ALLOW_MULTI_SELECT" => "N",
-		"CHILD_MENU_TYPE" => "left",
-		"DELAY" => "N",
-		"MAX_LEVEL" => "3",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MENU_CACHE_TIME" => "36000000",
-		"MENU_CACHE_TYPE" => "A",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"ROOT_MENU_TYPE" => "top",
-		"USE_EXT" => "Y",
-        "CACHE_SELECTED_ITEMS" => "Y",
-		"COMPONENT_TEMPLATE" => "top_menu_exam1"
-	),
-	false
-); ?>
+        <? $APPLICATION->IncludeComponent(
+            "bitrix:menu",
+            "top_menu_exam1",
+            array(
+                "ALLOW_MULTI_SELECT" => "N",
+                "CHILD_MENU_TYPE" => "left",
+                "DELAY" => "N",
+                "MAX_LEVEL" => "3",
+                "MENU_CACHE_GET_VARS" => array(),
+                "MENU_CACHE_TIME" => "36000000",
+                "MENU_CACHE_TYPE" => "A",
+                "MENU_CACHE_USE_GROUPS" => "Y",
+                "ROOT_MENU_TYPE" => "top",
+                "USE_EXT" => "Y",
+                "CACHE_SELECTED_ITEMS" => "Y",
+                "COMPONENT_TEMPLATE" => "top_menu_exam1"
+            ),
+            false
+        ); ?>
 
-            
+
         <!-- /nav -->
 
         <!-- breadcrumbs -->
         <? if ($APPLICATION->GetCurPage() != '/s2/') : ?>
-            <div class="breadcrumbs-box">
-                <div class="inner-wrap">
-                    <a href="">Главная</a>
-                    <a href="">Мебель</a>
-                    <span>Выставки и события</span>
-                </div>
-            </div>
+
+            <? 
+            $APPLICATION->IncludeComponent(
+	"bitrix:breadcrumb", 
+	"bread_crumbs_exam1", 
+	array(
+		"PATH" => "",
+		"SITE_ID" => "s1",
+		"START_FROM" => "0",
+		"COMPONENT_TEMPLATE" => "bread_crumbs_exam1"
+	),
+	false
+); 
+            ?>
+
+<!-- <div class="breadcrumbs-box">
+    <div class="inner-wrap">
+        <a href="">Главная</a>
+        <a href="">Мебель</a>
+            <span>Выставки и события</span>
+    </div>
+</div> -->
+
         <? endif; ?>
         <!-- /breadcrumbs -->
 
@@ -270,4 +285,3 @@ Asset::getInstance()->addString("<link rel='shortcut icon' href='" . SITE_TEMPLA
                             </div>
                             <!-- /afisha box -->
                         <? endif; ?>
-
