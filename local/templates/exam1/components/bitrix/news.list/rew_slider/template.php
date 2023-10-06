@@ -17,7 +17,6 @@ $this->setFrameMode(true);
 
     <? foreach ($arResult["ITEMS"] as $arItem) : ?>
         <?
-
         if ($arItem["PREVIEW_PICTURE"]["ID"]) {
             $img_arr = CFile::ResizeImageGet( 
                 $arItem["PREVIEW_PICTURE"]["ID"], 
@@ -28,8 +27,7 @@ $this->setFrameMode(true);
                 false, 
                 false
             );
-        } 
-        
+        }        
         ?>
 
         <?
@@ -60,7 +58,7 @@ $this->setFrameMode(true);
                         </div>
                     </div>
                     <div class="text-block">
-                        <?= TruncateText($arItem['PREVIEW_TEXT'], 150) ?>
+                        <?= $arItem['PREVIEW_TEXT'] ?>
                     </div>
                 </div>
             </div>
