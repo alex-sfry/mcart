@@ -2,35 +2,35 @@
 $aMenuLinks = Array(
 	Array(
 		"Главная", 
-		SITE_DIR."/", 
+		SITE_DIR."/index.php", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Компания", 
-		SITE_DIR."company/", 
+		SITE_DIR."/company/", 
 		Array(), 
 		Array("DESCRIPTION"=>"текст для пункта Компания"), 
 		"" 
 	),
 	Array(
 		"Новости", 
-		SITE_DIR."news/", 
+		SITE_DIR."/news/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Продукция", 
-		SITE_DIR."products/", 
+		SITE_DIR."/products/", 
 		Array(), 
 		Array("DESCRIPTION"=>"текст для пункта Продукция"), 
 		"" 
 	),
 	Array(
 		"Услуги", 
-		SITE_DIR."services/", 
+		SITE_DIR."/services/", 
 		Array(), 
 		Array(), 
 		"" 

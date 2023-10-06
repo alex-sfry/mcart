@@ -83,7 +83,6 @@ Asset::getInstance()->addString("<link rel='shortcut icon' href='" . SITE_TEMPLA
                 "MENU_CACHE_USE_GROUPS" => "Y",
                 "ROOT_MENU_TYPE" => "top",
                 "USE_EXT" => "Y",
-                "CACHE_SELECTED_ITEMS" => "Y",
                 "COMPONENT_TEMPLATE" => "top_menu_exam1"
             ),
             false

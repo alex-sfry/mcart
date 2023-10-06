@@ -37,15 +37,10 @@ $this->setFrameMode(true);
             <?= GetMessage('DOCUMENTS_TITLE') ?>
         </p>
 
-        <? foreach ($arResult["DISPLAY_PROPERTIES"]["DOCUMENT"]["VALUE"] as $file_id): ?>
-            <?
-            $file_src = CFile::GetPath($file_id);       
-            $file_name = CFile::GetById($file_id)->fetch()['ORIGINAL_NAME'];
-            ?>
-
+        <? foreach ($arResult["DISPLAY_PROPERTIES"]["DOCUMENT"]["FILE_VALUE"] as $file): ?>
             <div class="exam-review-item-doc"><img class="rew-doc-ico" src="<?= SITE_TEMPLATE_PATH . '/img/icons/pdf_ico_40.png' ?>">
-                <a href="<?= $file_src ?>">
-                    <?= $file_name ?>
+                <a href="<?= $file['SRC'] ?>">
+                    <?= $file['ORIGINAL_NAME'] ?>
                 </a>
             </div>
         <? endforeach ?>
