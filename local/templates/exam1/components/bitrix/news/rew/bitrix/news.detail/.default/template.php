@@ -36,14 +36,25 @@ $this->setFrameMode(true);
         <p>
             <?= GetMessage('DOCUMENTS_TITLE') ?>
         </p>
-
-        <? foreach ($arResult["DISPLAY_PROPERTIES"]["DOCUMENT"]["FILE_VALUE"] as $file): ?>
-            <div class="exam-review-item-doc"><img class="rew-doc-ico" src="<?= SITE_TEMPLATE_PATH . '/img/icons/pdf_ico_40.png' ?>">
-                <a href="<?= $file['SRC'] ?>">
-                    <?= $file['ORIGINAL_NAME'] ?>
-                </a>
-            </div>
-        <? endforeach ?>
+        <?php
+        if ($arResult["DISPLAY_PROPERTIES"]["DOCUMENT"]["FILE_VALUE"][1]) : ?>
+            <? foreach ($arResult["DISPLAY_PROPERTIES"]["DOCUMENT"]["FILE_VALUE"] as $file) : ?>
+                <div class="exam-review-item-doc"><img class="rew-doc-ico" src="<?= SITE_TEMPLATE_PATH . '/img/icons/pdf_ico_40.png' ?>">
+                    <a href="<?= $file['SRC'] ?>">
+                        <?= $file['ORIGINAL_NAME'] ?>
+                    </a>
+                </div>
+            <? endforeach ?>
+            <?php else : ?>
+                <div class="exam-review-item-doc"><img class="rew-doc-ico" src="<?= SITE_TEMPLATE_PATH . '/img/icons/pdf_ico_40.png' ?>">
+                    <a href="<?= $arResult["DISPLAY_PROPERTIES"]["DOCUMENT"]["FILE_VALUE"]['SRC'] ?>">
+                        <?= $arResult["DISPLAY_PROPERTIES"]["DOCUMENT"]["FILE_VALUE"]['ORIGINAL_NAME'] ?>
+                    </a>
+                </div>
+        <?php endif ?>
+        
+        
+        
 
     </div>
 
