@@ -59,7 +59,7 @@ Asset::getInstance()->addString("<link rel='shortcut icon' href='" . SITE_TEMPLA
                             "FORGOT_PASSWORD_URL" => "/s2/login/?forgot_password=yes",
                             "PROFILE_URL" => "/s2/login/user.php",
                             "REGISTER_URL" => "/s2/login/?register=yes",
-                            "SHOW_ERRORS" => "N"
+                            "SHOW_ERRORS" => "Y"
                         )
                     );
                     ?>
@@ -107,14 +107,6 @@ Asset::getInstance()->addString("<link rel='shortcut icon' href='" . SITE_TEMPLA
 	false
 ); 
             ?>
-
-<!-- <div class="breadcrumbs-box">
-    <div class="inner-wrap">
-        <a href="">Главная</a>
-        <a href="">Мебель</a>
-            <span>Выставки и события</span>
-    </div>
-</div> -->
 
         <? endif; ?>
         <!-- /breadcrumbs -->

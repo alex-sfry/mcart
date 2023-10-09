@@ -111,5 +111,5 @@ $APPLICATION->IncludeComponent(
 		"CHECK_DATES" => $arParams["CHECK_DATES"],
 	],
 	$component,
-	['HIDE_ICONS' => 'Y']
+	['HIDE_ICONS' => 'N']
 );

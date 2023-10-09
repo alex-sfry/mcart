@@ -8,33 +8,37 @@
 <div class="side">
 
     <? $APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"left", 
-	array(
-		"ALLOW_MULTI_SELECT" => "N",
-		"CHILD_MENU_TYPE" => "left",
-		"DELAY" => "N",
-		"MAX_LEVEL" => "1",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MENU_CACHE_TIME" => "36000000",
-		"MENU_CACHE_TYPE" => "A",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"CACHE_SELECTED_ITEMS" => "Y",
-		"ROOT_MENU_TYPE" => "left",
-		"USE_EXT" => "Y",
-		"COMPONENT_TEMPLATE" => "left"
-	),
-	false
-); ?>
+        "bitrix:menu",
+        "left",
+        array(
+            "ALLOW_MULTI_SELECT" => "N",
+            "CHILD_MENU_TYPE" => "left",
+            "DELAY" => "N",
+            "MAX_LEVEL" => "1",
+            "MENU_CACHE_GET_VARS" => array(""),
+            "MENU_CACHE_TIME" => "3600",
+            "MENU_CACHE_TYPE" => "N",
+            "MENU_CACHE_USE_GROUPS" => "Y",
+            "CACHE_SELECTED_ITEMS" => "Y",
+            "ROOT_MENU_TYPE" => "left",
+            "USE_EXT" => "Y"
+        )
+    ); ?>
 
     <!-- side anonse -->
-    <div class="side-block side-anonse">
-        <div class="title-block"><span class="i i-title01"></span>Полезная информация!</div>
-        <div class="item">
-            <p>Клиенты предпочитают все больше эко-материалов.</p>
-        </div>
-    </div>
+    
+    <?$APPLICATION->IncludeComponent(
+	"bitrix:main.include", 
+	"include_side_exam1", 
+	array(
+		"AREA_FILE_RECURSIVE" => "Y",
+		"AREA_FILE_SHOW" => "sect",
+		"AREA_FILE_SUFFIX" => "inc",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => "include_side_exam1"
+	),
+	false
+);?>
     <!-- /side anonse -->
     <!-- side wrap -->
     <div class="side-wrap">
@@ -127,7 +131,7 @@
 	false
 ); ?>
 
-            
+
         </div>
         <!-- / footer rew slider box -->
     </div>
@@ -147,14 +151,26 @@
         <nav class="main-menu">
             <div class="item">
                 <div class="title-block">О магазине</div>
-                <ul>
-                    <li><a href="">Отзывы</a>
-                    </li>
-                    <li><a href="">Руководство </a>
-                    </li>
-                    <li><a href="">История</a>
-                    </li>
-                </ul>
+
+                <? $APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"menu_bottom_exam1", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "1",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "36000000",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "bottom_exam1",
+		"USE_EXT" => "N",
+		"COMPONENT_TEMPLATE" => "menu_bottom_exam1"
+	),
+	false
+); ?>
             </div>
             <div class="item">
                 <div class="title-block">Каталог товаров</div>
@@ -186,7 +202,17 @@
             <div class="title-block"><?= GetMessage('CONTACT_INFO'); ?></div>
             <div class="loc-block">
                 <div class="address">ул. Летняя, стр.12, офис 512</div>
-                <div class="phone"><a href="tel:84952128506">8 (495) 212-85-06</a>
+                <div class="phone">
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:main.include",
+                        "",
+                        array(
+                            "AREA_FILE_SHOW" => "file",
+                            "AREA_FILE_SUFFIX" => "inc",
+                            "EDIT_TEMPLATE" => "",
+                            "PATH" => "/include/footer_phone.php"
+                        )
+                    ); ?>                  
                 </div>
             </div>
             <div class="main-soc-block">

@@ -4,54 +4,61 @@ $aMenuLinks = Array(
 		"Главная", 
 		SITE_DIR."/index.php", 
 		Array(), 
-		Array(), 
+		Array("COLOR"=>""), 
 		"" 
 	),
 	Array(
 		"Компания", 
 		SITE_DIR."/company/", 
 		Array(), 
-		Array("DESCRIPTION"=>"текст для пункта Компания"), 
+		Array("DESCRIPTION"=>"текст для пункта Компания", "COLOR"=>"red"), 
 		"" 
 	),
 	Array(
 		"Новости", 
 		SITE_DIR."/news/", 
 		Array(), 
-		Array(), 
+		Array("COLOR"=>""), 
 		"" 
 	),
 	Array(
 		"Продукция", 
 		SITE_DIR."/products/", 
 		Array(), 
-		Array("DESCRIPTION"=>"текст для пункта Продукция"), 
+		Array("DESCRIPTION"=>"текст для пункта Продукция", "COLOR"=>""), 
 		"" 
 	),
 	Array(
 		"Услуги", 
 		SITE_DIR."/services/", 
 		Array(), 
-		Array(), 
+		Array("COLOR"=>""), 
 		"" 
 	),
 	Array(
 		"Партнерам", 
 		SITE_DIR."/partneram/", 
 		Array(), 
-		Array("DESCRIPTION"=>"текст для пункта Партнерам"), 
+		Array("DESCRIPTION"=>"текст для пункта Партнерам", "COLOR"=>""), 
 		"" 
 	),
 	Array(
 		"Отзывы", 
 		SITE_DIR."/rew/", 
 		Array(), 
-		Array(), 
+		Array("COLOR"=>""), 
 		"" 
 	),
 	Array(
 		"Поиск", 
 		SITE_DIR."/search/", 
+		Array(), 
+		Array("COLOR"=>""), 
+		"" 
+	),
+	Array(
+		"Опросы", 
+		SITE_DIR."/ask/", 
 		Array(), 
 		Array(), 
 		"" 
