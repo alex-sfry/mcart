@@ -14,8 +14,10 @@ $this->setFrameMode(true);
 ?>
 
 <? foreach ($arResult["ITEMS"] as $arItem) : ?>
-    <?php 
-    $resized_detail_image = CFile::ResizeImageGet($arItem['DETAIL_PICTURE']['ID'], array('width' => 68, 'height' => 50), BX_RESIZE_IMAGE_EXACT);
+    <?php
+    if ($arItem['DETAIL_PICTURE']) {
+        $resized_detail_image = CFile::ResizeImageGet($arItem['DETAIL_PICTURE']['ID'], array('width' => 68, 'height' => 50), BX_RESIZE_IMAGE_EXACT);
+    };
     ?>
 
     <?
